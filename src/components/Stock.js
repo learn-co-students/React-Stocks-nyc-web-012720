@@ -1,16 +1,16 @@
 import React from 'react'
 
-const Stock = () => (
+const Stock = props => (
+
   <div>
 
-    <div className="card">
+    <div onMouseOver={(event) => {event.target.style.cursor = 'pointer'}} onClick={() => props.addToPortfolio ? props.addToPortfolio(props.stock) : props.removeFromPortfolio(props.stock)} className="card">
       <div className="card-body">
-        <h5 className="card-title">{
-            //Company Name
-          }</h5>
-        <p className="card-text">{
-            //ticker: stock price
-          }</p>
+        <h5 className="card-title">{props.stock.name}</h5>
+
+        <p className="card-text">
+            {props.stock.ticker} : {props.stock.price}
+          </p>
       </div>
     </div>
 
