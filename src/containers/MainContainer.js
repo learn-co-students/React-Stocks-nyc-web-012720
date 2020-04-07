@@ -9,6 +9,7 @@ class MainContainer extends Component {
     stocks: [],
     portfolio: [],
     filter: "",
+    checked: ""
   }
 
   componentDidMount(){
@@ -62,7 +63,7 @@ class MainContainer extends Component {
     } else if (event.target.value === "Price"){
       stocks.sort((a, b) => a.price - b.price)
     }
-    this.setState({stocks: sortedStocks})
+    this.setState({stocks: sortedStocks, checked: event.target.value})
   }
   
   render() {   
